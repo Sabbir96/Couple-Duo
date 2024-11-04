@@ -1,0 +1,50 @@
+<div
+  class="flex justify-center items-center h-screen bg-gradient-glass-low-opacity"
+>
+  @if(isPairUpSuccessful) {
+  <div
+    class="max-w-[80vw] mx-auto flex flex-col justify-center items-center bg-glass-low-opacity rounded-xl p-10"
+  >
+    <img src="assets/icons/pair-successful.gif" alt="" />
+    <h1 class="headingPrimary">Successfully paired.</h1>
+    <button class="btnPrimary px-7 py-3 text-md">Go To Home</button>
+  </div>
+  } @else if(isPairUpSuccessful === false) {
+  <div
+    class="max-w-[80vw] mx-auto flex flex-col justify-center items-center bg-glass-low-opacity rounded-xl p-10"
+  >
+    <img src="assets/icons/pair-failed.gif" alt="" />
+    <h1 class="headingPrimary">Oops! Something went wrong.</h1>
+    <button class="btnPrimary px-7 py-3 text-md">Go To Home</button>
+  </div>
+
+  } @else if(isPairUpSuccessful === null) {
+  <div
+    class="max-w-[80vw] mx-auto flex flex-col justify-center items-center bg-glass-low-opacity rounded-xl p-10"
+  >
+    <img src="assets/icons/pair.gif" alt="" />
+    <h1 class="headingPrimary loading">
+      Please wait we are connection with your better half
+    </h1>
+  </div>
+  }
+</div>
+
+<!-- <section class="flex h-full w-full justify-center items-center">
+  <ngx-spinner
+    bdColor="rgba(255, 255, 255, 0.8)"
+    size="medium"
+    color="#673ab7"
+    type="ball-scale-multiple"
+    [fullScreen]="true"
+  >
+    <div
+      class="w-full mx-auto flex flex-col justify-center items-center bg-glass-low-opacity rounded-xl p-10"
+    >
+      <img src="assets/icons/pair.gif" alt="" />
+      <h1 class="headingPrimary">
+        Please wait we are connection with your better half.
+      </h1>
+    </div>
+  </ngx-spinner>
+</section> -->

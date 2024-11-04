@@ -1,0 +1,70 @@
+<div class="max-w-4xl mx-auto p-6">
+  <div class="flex justify-between items-center mb-6">
+    <div class="flex items-center">
+      <div
+        class="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center overflow-hidden"
+      >
+        <img
+          src="http://thispersondoesnotexist.com"
+          alt="Profile picture"
+          class="w-full h-full object-cover"
+        />
+      </div>
+      <span class="ml-3 font-bold">{{ firstName }}</span>
+    </div>
+    <div>
+      <button class="px-4 py-2 btnPrimary text-white" (click)="goToAddFund()">
+        Add Fund
+      </button>
+    </div>
+  </div>
+
+  <div class="mb-6">
+    <h2 class="text-xl font-bold mb-2">My Portfolio</h2>
+    <p class="text-2xl font-bold">${{ portfolioValue }}</p>
+  </div>
+
+  <div class="mb-6">
+    <canvas id="portfolioValueByDay" class="w-full"></canvas>
+  </div>
+
+  <div class="mb-6">
+    <h2 class="text-xl font-bold mb-3">Investments</h2>
+    <div class="flex justify-between">
+      <div class="w-1/2">
+        <h3 class="text-lg font-bold">Funds Invested</h3>
+        <p class="text-2xl font-bold">${{ fundsInvested }}</p>
+      </div>
+      <div class="w-1/2 text-right">
+        <h3 class="text-lg font-bold">Gain/Loss ($)</h3>
+        <p class="text-2xl font-bold">${{ gainLoss }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-6">
+    <div class="flex justify-between">
+      <div class="w-1/2">
+        <h3 class="text-lg font-bold">Available to Invest</h3>
+      </div>
+      <div class="w-1/2 text-right">
+        <h3 class="text-xl font-bold">${{ effectiveBuyingPower }}</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-6">
+    <h2 class="text-xl font-bold mb-1">Portfolio</h2>
+    <p class="text-gray-600">Keep track of your positions</p>
+    <div
+      class="m-5 p-2 h-32 text-white text-center rounded-lg bgGradient flex items-center justify-center"
+    >
+      Please Buy Stocks/Bonds To Buid Your Portfolio
+    </div>
+  </div>
+  <div class="mb-6 flex justify-center">
+    <button class="px-4 py-2 btnPrimary text-white" (click)="goToExplore()">
+      Explore
+    </button>
+  </div>
+</div>

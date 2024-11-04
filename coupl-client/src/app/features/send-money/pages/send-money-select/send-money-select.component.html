@@ -1,0 +1,71 @@
+<section>
+  <div
+    class="top-design min-h-[200px] flex justify-center items-center text-xl w-full"
+  >
+    <h1 class="m-0 text-center text-white">Send Money</h1>
+  </div>
+  <div class="-mt-10 bg-white rounded-t-3xl p-5">
+    <div class="mt-10 max-w-[80vw] mx-auto">
+      <h2 class="mb-10 headingPrimary">Select where you want to send</h2>
+      <div
+        class="grid gap-3 bg-gradient-glass-low-opacity py-10 px-2 rounded-xl"
+      >
+        <div
+          class="flex justify-start items-center gap-3 cursor-pointer hover:bg-slate-100 hover:shadow-lg p-4 rounded bg-glass-low-opacity"
+          (click)="selectOption('internal')"
+        >
+          <svg
+            width="30"
+            height="30"
+            viewBox="0 0 500 500"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M500 0H0V168.327H45.2065C62.4281 168.327 77.4776 171.741 90.355 178.567C103.232 185.394 113.162 195.013 120.144 207.425C127.281 219.682 130.849 233.878 130.849 250.013C130.849 265.994 127.281 280.19 120.144 292.602C113.162 305.014 103.155 314.633 90.1223 321.46C77.2449 328.286 62.2729 331.7 45.2065 331.7H0V500H500V299C492.553 311.722 486.859 315.487 474.137 322.623C461.414 329.76 447.373 333.329 432.013 333.329C416.654 333.329 402.535 329.76 389.658 322.623C376.935 315.487 366.773 305.557 359.171 292.835C351.724 279.957 348 265.528 348 249.548C348 233.568 351.724 219.216 359.171 206.494C366.773 193.772 376.935 183.842 389.658 176.705C402.535 169.568 416.654 166 432.013 166C447.373 166 461.414 169.568 474.137 176.705C487.014 183.842 492.708 187.278 500 200V0ZM77.7879 284.922C69.4098 293.145 57.696 297.257 42.6465 297.257H23.7959V202.305H42.6465C57.696 202.305 69.4098 206.494 77.7879 214.872C86.166 223.25 90.355 234.964 90.355 250.013C90.355 265.063 86.166 276.699 77.7879 284.922ZM210.796 167.164V264.908C210.796 274.682 213.201 282.207 218.01 287.482C222.82 292.757 229.879 295.395 239.188 295.395C248.497 295.395 255.634 292.757 260.599 287.482C265.564 282.207 268.046 274.682 268.046 264.908V167.164H307.842V264.675C307.842 279.259 304.739 291.594 298.533 301.678C292.327 311.763 283.949 319.365 273.399 324.485C263.004 329.605 251.367 332.165 238.49 332.165C225.613 332.165 214.054 329.683 203.814 324.718C193.729 319.598 185.739 311.996 179.844 301.911C173.948 291.671 171 279.259 171 264.675V167.164H210.796ZM463.199 283.991C455.441 292.68 445.046 297.024 432.013 297.024C418.826 297.024 408.276 292.757 400.363 284.224C392.605 275.536 388.727 263.977 388.727 249.548C388.727 234.964 392.605 223.405 400.363 214.872C408.276 206.339 418.826 202.072 432.013 202.072C445.046 202.072 455.441 206.416 463.199 215.105C471.111 223.638 475.067 235.119 475.067 249.548C475.067 263.822 471.111 275.303 463.199 283.991Z"
+              fill="url(#paint0_linear_265_135)"
+            />
+            <defs>
+              <linearGradient
+                id="paint0_linear_265_135"
+                x1="0"
+                y1="0"
+                x2="500"
+                y2="500"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#FA2C05" />
+                <stop offset="0.5" stop-color="#F637E3" />
+                <stop offset="1" stop-color="#673AB6" />
+              </linearGradient>
+            </defs>
+          </svg>
+
+          <h3 class="text-center">
+            Another <span class="headingPrimary">Duo</span>
+          </h3>
+        </div>
+        <div
+          class="flex justify-start items-center gap-3 cursor-pointer hover:bg-slate-100 hover:shadow-lg p-4 rounded bg-glass-low-opacity"
+          (click)="selectOption('external')"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M7 21h-4v-11h4v11zm7-11h-4v11h4v-11zm7 0h-4v11h4v-11zm2 12h-22v2h22v-2zm-23-13h24l-12-9-12 9z"
+            />
+          </svg>
+          <h3 class="text-center">
+            Outside Account
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

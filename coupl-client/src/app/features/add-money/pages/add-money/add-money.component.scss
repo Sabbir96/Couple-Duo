@@ -1,0 +1,12 @@
+.bg-glass-low-opacity {
+  scale: 0.9;
+  &:nth-child(1):hover {
+    transform: translateY(-10px);
+    scale: 1;
+  }
+
+  &:nth-child(2):hover {
+    transform: translateY(10px);
+    scale: 1;
+  }
+}

@@ -1,0 +1,46 @@
+<div class="min-h-screen">
+  <section>
+    <div class="mx-auto px-5 sm:px-1 max-w-xl">
+      <div class="flex justify-between items-center">
+        <h1 class="text-3xl mb-1 headingPrimary">Upload Back Page</h1>
+      </div>
+      <p class="text-xs mb-5 text-slate-500">
+        By law we need your home address to open your account
+      </p>
+    </div>
+    <div class="flex justify-center items-center m-2">
+      <div
+        class="w-57 h-64 border-3 border-solid overflow-hidden"
+        style="
+          border-image: linear-gradient(
+              90deg,
+              #fa2c05 -18.18%,
+              #f637e3 18.05%,
+              #8514f5 37.23%
+            )
+            1;
+        "
+      >
+        <webcam
+          [height]="500"
+          [width]="500"
+          [trigger]="cameraService.triggerObservable"
+          (imageCapture)="cameraService.handleImage($event)"
+          *ngIf="cameraService.showWebcam"
+          (initError)="cameraService.handleInitError($event)"
+        ></webcam>
+      </div>
+    </div>
+  </section>
+  <section class="absolute bottom-10 left-0 w-full">
+    <div class="flex flex-col gap-5 justify-center items-center">
+      <button
+        mat-stroked-button
+        class="btnOutline w-32 h-12 text-lg flex items-center justify-center"
+        (click)="onNextClick()"
+      >
+        Next
+      </button>
+    </div>
+  </section>
+</div>

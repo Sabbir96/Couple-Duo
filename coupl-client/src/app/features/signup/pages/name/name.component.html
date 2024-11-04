@@ -1,0 +1,47 @@
+<div class="min-h-screen">
+  <section class="overflow-hidden">
+    <div class="mx-auto px-5 sm:px-1 max-w-xl">
+      <div class="flex justify-between items-center">
+        <h1 class="text-2xl font-bold mb-1 headingPrimary">Name as in ID</h1>
+        <img
+          src="/assets/icons/name.png"
+          style="height: 30px; width: 30px"
+          alt=""
+        />
+      </div>
+      <p class="text-xs mb-5 text-slate-500">
+        Please enter your name as in your ID.
+      </p>
+      <form #form="ngForm">
+        <div class="mt-5">
+          <mat-form-field appearance="outline" class="w-full mb-5">
+            <mat-label>First Name</mat-label>
+            <input
+              matInput
+              placeholder="First Name"
+              name="first_name"
+              ngModel
+            />
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="w-full mb-5">
+            <mat-label>Last Name</mat-label>
+            <input matInput placeholder="Last Name" name="last_name" ngModel />
+          </mat-form-field>
+        </div>
+      </form>
+    </div>
+  </section>
+  <section class="absolute bottom-10 left-0 w-full">
+    <div class="flex flex-col gap-5 justify-center items-center">
+      <button
+        mat-stroked-button
+        class="btnOutline w-32 h-12 text-lg flex items-center justify-center"
+        (click)="onNextClick()"
+        [routerLink]="['/signup/address']"
+        routerLinkActive="router-link-active"
+      >
+        Next
+      </button>
+    </div>
+  </section>
+</div>

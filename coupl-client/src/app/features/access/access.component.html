@@ -1,0 +1,47 @@
+<section style="position: relative; height: 100vh">
+  <div class="absolute top-10 z-50 w-full">
+    <div class="w-full flex justify-center items-center">
+      <h1 class="text-center text-4xl text-black italic font-black uppercase">
+        Spend guilt-free <br />
+        <span class="text-7xl"
+          >Use <span class="headingPrimary">duo</span></span
+        >
+      </h1>
+    </div>
+  </div>
+  <video
+    #bgVideo
+    autoplay
+    muted
+    loop
+    playsinline
+    style="
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+    "
+  >
+    <source src="/assets/background/bg.mp4" type="video/mp4" />
+  </video>
+  <section class="absolute bottom-10 left-0 w-full">
+    <div class="flex flex-col gap-5 justify-center items-center">
+      <button
+        mat-raised-button
+        class="btnPrimary w-32 h-12 text-lg flex items-center justify-center btn-signup"
+        [routerLink]="['/signup/email']"
+        routerLinkActive="router-link-active"
+      >
+        Sign up
+      </button>
+      <button
+        mat-stroked-button
+        class="btnOutline w-32 h-12 text-lg flex items-center justify-center"
+        [routerLink]="['/signin']"
+      >
+        Sign in
+      </button>
+    </div>
+  </section>
+</section>

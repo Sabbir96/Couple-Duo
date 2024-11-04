@@ -1,0 +1,45 @@
+@mixin mat-gradients($theme) { 
+  // Add Gradients to Material
+  
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $primary: map-get($theme, primary);
+  
+  $primary-gradient: linear-gradient(135deg, mat-color($primary), mat-color($primary, Gradient-Stop))!global;
+  $warn-gradient:   linear-gradient(135deg, mat-color($warn), mat-color($warn, Gradient-Stop))!global;
+  $accent-gradient: linear-gradient(135deg, mat-color($accent),mat-color($accent, Gradient-Stop))!global;
+  
+    //svg gradient
+  
+    svg #primary-gradient {
+      .stop-1 {
+        stop-color: mat-color($primary);
+      }
+    
+      .stop-2 {
+        stop-color: mat-color($primary, Gradient-Stop);
+      }
+    }
+  
+    svg #accent-gradient {
+      .stop-1 {
+        stop-color: mat-color($accent);
+      }
+    
+      .stop-2 {
+        stop-color: mat-color($accent, Gradient-Stop);
+      }
+    }
+  
+    
+    svg #warn-gradient {
+      .stop-1 {
+        stop-color: mat-color($warn);
+      }
+    
+      .stop-2 {
+        stop-color: mat-color($warn, Gradient-Stop);
+      }
+    }
+  
+  }

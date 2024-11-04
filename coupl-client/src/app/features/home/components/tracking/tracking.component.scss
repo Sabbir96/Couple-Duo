@@ -1,0 +1,64 @@
+.toggleContainer {
+  position: absolute;
+  top: 10%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: fit-content;
+  border: 3px solid #343434;
+  border-radius: 20px;
+  background: #343434;
+  font-weight: bold;
+  color: #343434;
+  cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    left: 0%;
+    border-radius: 20px;
+    background: #274d79;
+    transition: all 0.3s;
+  }
+
+  div {
+    padding: 6px;
+    text-align: center;
+    z-index: 1;
+  }
+}
+
+.toggleCheckbox {
+  display: none;
+
+  &:checked {
+    + .toggleContainer::before {
+      left: 50%;
+    }
+
+    + .toggleContainer {
+      div:first-child {
+        color: #8e8e8e;
+        transition: color 0.3s;
+      }
+
+      div:last-child {
+        color: white;
+        transition: color 0.3s;
+      }
+    }
+  }
+
+  + .toggleContainer {
+    div:first-child {
+      color: white;
+      transition: color 0.3s;
+    }
+
+    div:last-child {
+      color: #8e8e8e;
+      transition: color 0.3s;
+    }
+  }
+}

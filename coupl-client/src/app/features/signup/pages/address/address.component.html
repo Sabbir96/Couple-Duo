@@ -1,0 +1,78 @@
+<div class="min-h-screen">
+  <section class="overflow-hidden">
+    <div class="mx-auto px-5 sm:px-1 max-w-xl">
+      <div class="flex justify-between items-center">
+        <h1 class="text-2xl font-bold mb-1 heading">Home Address</h1>
+        <img
+          src="/assets/icons/address.png"
+          style="height: 30px; width: 30px"
+          alt=""
+        />
+      </div>
+      <p class="text-xs mb-5 text-slate-500">
+        By law we need your home address to open your account
+      </p>
+      <form #form="ngForm">
+        <div class="mt-5">
+          <mat-form-field appearance="outline" class="w-full mb-5">
+            <mat-label>Address Like 1</mat-label>
+            <input
+              matInput
+              placeholder="Address Like 1"
+              name="street_line_1"
+              ngModel
+            />
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="w-full mb-5">
+            <mat-label>Address Line 2</mat-label>
+            <input
+              matInput
+              placeholder="Address Line 2"
+              name="street_line_2"
+              ngModel
+            />
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="w-full mb-5">
+            <mat-label>Zip Code</mat-label>
+            <input
+              matInput
+              placeholder="Zip Code"
+              name="postal_code"
+              ngModel
+            />
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="w-full mb-5">
+            <mat-label>City</mat-label>
+            <input matInput placeholder="City" name="city" ngModel />
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="w-full mb-5">
+            <mat-label>State</mat-label>
+            <mat-select
+              placeholder="State"
+              name="state"
+              [(ngModel)]="selectedState"
+            >
+              <mat-option
+                *ngFor="let state of states"
+                [value]="state.abbreviation"
+              >
+                {{ state.name }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </form>
+    </div>
+  </section>
+  <section class="absolute bottom-10 left-0 w-full">
+    <div class="flex flex-col gap-5 justify-center items-center">
+      <button
+        mat-stroked-button
+        class="btnOutline w-32 h-12 text-lg flex items-center justify-center"
+        (click)="onNextClick()"
+      >
+        Next
+      </button>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,47 @@
+<div class="min-h-screen">
+  <section>
+    <div class="mx-auto px-5 sm:px-1 max-w-xl">
+      <div class="flex justify-between items-center">
+        <h1 class="text-3xl mb-1 headingPrimary">Enter passcode</h1>
+        <img
+          src="/assets/icons/address.png"
+          style="height: 30px; width: 30px"
+          alt="email icon"
+        />
+      </div>
+      <p class="text-xs mb-5 text-slate-500">
+        Please set a passcode for your account. You will need this passcode to
+        login to your account. Please remember this passcode.
+      </p>
+      <form>
+        <div class="mt-5">
+          <mat-form-field appearance="outline" class="w-full mb-5">
+            <mat-label class="text-primary">Passcode</mat-label>
+            <input
+              matInput
+              placeholder="********"
+              name="passcode"
+              ngModel
+              [formControl]="passcode"
+              required
+              type="password"
+              maxlength="6"
+              pattern="[0-9]*"
+            />
+          </mat-form-field>
+        </div>
+      </form>
+    </div>
+  </section>
+  <section class="absolute bottom-10 left-0 w-full">
+    <div class="flex flex-col gap-5 justify-center items-center">
+      <button
+        mat-stroked-button
+        class="btnOutline w-32 h-12 text-lg flex items-center justify-center"
+        (click)="createAccount()"
+      >
+        Let's go
+      </button>
+    </div>
+  </section>
+</div>

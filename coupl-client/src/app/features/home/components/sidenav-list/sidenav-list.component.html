@@ -1,0 +1,68 @@
+<mat-sidenav-container class="flex justify-end overflow-hidden">
+  <mat-sidenav
+    class="bgGradient"
+    #sidenav
+    mode="over"
+    position="end"
+    style="width: 50vw"
+  >
+    <div class="flex flex-col justify-between h-full" style="overflow: hidden">
+      <div class="flex flex-col items-stretch">
+        <button
+          mat-button
+          [routerLink]="['/home']"
+          style="color: white; width: 100%"
+        >
+          Home
+        </button>
+        <button
+          mat-button
+          [routerLink]="['/home/tracking']"
+          style="color: white; width: 100%"
+        >
+          Tracking
+        </button>
+        <button
+          mat-button
+          [routerLink]="['/home/bank']"
+          style="color: white; width: 100%"
+        >
+          Bank Account
+        </button>
+        <button
+          mat-button
+          [routerLink]="alpacaAccountId ? ['/home/invest'] : ['/home/invest/connect']"
+          style="color: white; width: 100%"
+        >
+          Invest
+        </button>
+        <button
+          mat-button
+          [routerLink]="['/home/profile']"
+          style="color: white; width: 100%"
+        >
+          Profile
+        </button>
+        <button
+          mat-button
+          [routerLink]="['/home/bills']"
+          style="color: white; width: 100%"
+        >
+          Bills
+        </button>
+      </div>
+      <div class="text-center w-full">
+        <button
+          mat-button
+          [routerLink]="['/home/logout']"
+          style="color: white; width: 100%"
+        >
+          Logout
+        </button>
+      </div>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content style="height: 100vh">
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>

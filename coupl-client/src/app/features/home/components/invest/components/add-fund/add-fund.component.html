@@ -1,0 +1,12 @@
+<div class="flex flex-col items-center justify-center" style="min-height: calc(100vh - 48px);">
+  <p class="mb-4 text-xl">Add Money To Your Account</p>
+  <input
+    class="mb-4 inputPrimary p-2 rounded-md"
+    type="number"
+    [(ngModel)]="amount"
+    placeholder="Enter Fund Amount"
+  />
+  <button class="btnPrimary text-white font-bold py-2 px-4 rounded" (click)="addFund()">
+    Add Fund
+  </button>
+</div>

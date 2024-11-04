@@ -1,0 +1,61 @@
+<div class="min-h-screen">
+  <section>
+    <div class="mx-auto px-5 sm:px-1 max-w-xl">
+      <div class="flex justify-between items-center">
+        <h1 class="text-3xl mb-1 headingPrimary">Email</h1>
+        <img
+          src="/assets/icons/email.png"
+          style="height: 30px; width: 30px"
+          alt="email icon"
+        />
+      </div>
+      <p class="text-xs mb-5 text-slate-500">
+        Please enter your email so that we can send otp to your email.
+      </p>
+      <form>
+        <div class="mt-5">
+          <mat-form-field appearance="outline" class="w-full mb-5">
+            <mat-label class="text-primary">Email</mat-label>
+            <input
+              matInput
+              placeholder="Email"
+              name="email"
+              [formControl]="email"
+              required
+            />
+            @if (email.invalid) {
+            <mat-error class="text-sm">{{ getErrorMessage() }}</mat-error>
+            }
+          </mat-form-field>
+          <div class="grid gap-2">
+            <a routerLink="/signin" class=""
+              >Already have an account? Sign in</a
+            >
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+  <section class="absolute bottom-10 left-0 w-full">
+    <div class="flex flex-col gap-5 justify-center items-center">
+      <button
+        mat-stroked-button
+        class="btnOutline w-32 h-12 text-lg flex items-center justify-center"
+        (click)="checkEmail()"
+        [disabled]="email.invalid"
+      >
+        Next
+      </button>
+    </div>
+  </section>
+</div>
+
+<ngx-spinner
+  bdColor="rgba(0, 0, 0, 0.8)"
+  size="medium"
+  color="#673ab7"
+  type="ball-scale-multiple"
+  [fullScreen]="true"
+>
+  <p style="color: white">Checking Email...</p>
+</ngx-spinner>

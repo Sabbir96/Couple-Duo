@@ -1,0 +1,23 @@
+.top-design {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    140deg,
+    rgba(250, 46, 5, 1) 0%,
+    rgba(246, 55, 227, 1) 50%,
+    rgba(103, 58, 182, 1) 66.67%
+  );
+  min-height: 150px;
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

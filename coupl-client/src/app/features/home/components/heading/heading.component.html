@@ -1,0 +1,77 @@
+<div class="flex justify-between items-center">
+  <div
+    *ngIf="(route.firstChild?.data | async)?.['title'] === 'home'"
+    class="flex justify-start items-center gap-3 ml-4"
+  >
+    <div class="flex justify-start items-center gap-3">
+      <div class="flex justify-start items-center">
+        <p
+          class="bg-[#F637E3] text-white font-mabrypro font-black text-2xl p-4 rounded-full w-5 h-5 flex items-center justify-center font-3xl"
+        >
+          {{ primaryAccountName.charAt(0) }}
+        </p>
+        <p
+          class="bg-primary text-white font-mabrypro font-black text-2xl p-4 rounded-full w-5 h-5 flex items-center justify-center font-3xl -ml-6"
+        >
+          {{ partnerAccountName.charAt(0) }}
+        </p>
+      </div>
+
+      <!-- Names -->
+      <div class="font-mabrypro flex">
+        <p class="text-xl font-bold">Ariful</p>
+        <p class="text-xl font-bold">&</p>
+        <p class="text-xl font-bold">Audity</p>
+      </div>
+    </div>
+  </div>
+  <div
+    *ngIf="(route.firstChild?.data | async)?.['title'] === 'tracking'"
+    class="ml-4"
+  >
+    <h1>History</h1>
+  </div>
+  <div
+    *ngIf="(route.firstChild?.data | async)?.['title'] === 'invest'"
+    class="ml-4"
+  >
+    <h1></h1>
+  </div>
+  <div class="flex justify-end">
+    <button
+      mat-icon-button
+      (click)="toggleSidenav()"
+      class="mr-4"
+      style="z-index: 9999"
+    >
+      <ng-container *ngIf="!showSideBar; else closeIcon">
+        <svg
+          clip-rule="evenodd"
+          fill-rule="evenodd"
+          stroke-linejoin="round"
+          stroke-miterlimit="2"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-8"
+        >
+          <path
+            d="m11 16.745c0-.414.336-.75.75-.75h9.5c.414 0 .75.336.75.75s-.336.75-.75.75h-9.5c-.414 0-.75-.336-.75-.75zm-9-5c0-.414.336-.75.75-.75h18.5c.414 0 .75.336.75.75s-.336.75-.75.75h-18.5c-.414 0-.75-.336-.75-.75zm4-5c0-.414.336-.75.75-.75h14.5c.414 0 .75.336.75.75s-.336.75-.75.75h-14.5c-.414 0-.75-.336-.75-.75z"
+            fill-rule="nonzero"
+          />
+        </svg>
+      </ng-container>
+      <ng-template #closeIcon>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 16.538l-4.592-4.548 4.546-4.587-1.416-1.403-4.545 4.589-4.588-4.543-1.405 1.405 4.593 4.552-4.547 4.592 1.405 1.405 4.555-4.596 4.591 4.55 1.403-1.416z"
+          />
+        </svg>
+      </ng-template>
+    </button>
+  </div>
+</div>

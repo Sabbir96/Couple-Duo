@@ -1,0 +1,56 @@
+<div class="min-h-screen">
+  <section>
+    <div class="mx-auto px-5 sm:px-1 max-w-xl">
+      <div class="flex justify-between items-center">
+        <h1 class="text-3xl mb-1 headingPrimary">6-digit Code</h1>
+        <img
+          src="/assets/icons/otp.png"
+          style="height: 30px; width: 30px"
+          alt="email icon"
+        />
+      </div>
+      <p class="text-xs mb-5 text-slate-500">
+        Code Sent to
+        <span class="headingPrimary font-bold">
+          {{ email }}
+        </span>
+        unless you already have an account
+      </p>
+      <form>
+        <div class="mt-5">
+          <mat-form-field appearance="outline" class="w-full mb-5">
+            <mat-label class="text-primary">Code</mat-label>
+            <input
+              matInput
+              placeholder="Code"
+              name="otp"
+              [formControl]="otp"
+              required="true"
+              [minlength]="6"
+              [maxlength]="6"
+            />
+            @if (otp.invalid) {
+            <mat-error class="text-sm">{{ getErrorMessage() }}</mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </form>
+      <div class="grid gap-2">
+        <a routerLink="/signin">No code received?</a>
+        <a routerLink="/signin" class="">Already have an account? Log in</a>
+      </div>
+    </div>
+  </section>
+  <section class="absolute bottom-10 left-0 w-full">
+    <div class="flex flex-col gap-5 justify-center items-center">
+      <button
+        mat-stroked-button
+        class="btnOutline w-32 h-12 text-lg flex items-center justify-center"
+        [disabled]="otp.invalid"
+        (click)="verifyOtp()"
+      >
+        Verify
+      </button>
+    </div>
+  </section>
+</div>

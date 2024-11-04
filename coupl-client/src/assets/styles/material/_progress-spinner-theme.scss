@@ -1,0 +1,29 @@
+
+
+
+
+@mixin mat-progress-spinner-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+
+  // Add Gradient to Material
+  .mat-progress-spinner, .mat-spinner {
+    circle {
+      stroke: mat-color($primary);
+      stroke: url(#primary-gradient);
+    }
+
+    &.mat-accent circle {
+      stroke: mat-color($accent);
+      stroke: url(#accent-gradient);
+    }
+
+    &.mat-warn circle {
+      stroke: mat-color($warn);
+      stroke: url(#warn-gradient);
+    }
+  }
+}
+
+@mixin mat-progress-spinner-typography($config) { }

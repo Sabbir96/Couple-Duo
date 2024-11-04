@@ -1,0 +1,124 @@
+<section>
+  <div class="top-design flex justify-center items-center text-xl w-full">
+    <h1 class="m-0 text-center text-white">Card to DUO</h1>
+  </div>
+  <div class="-mt-10 bg-white rounded-t-3xl p-5">
+    <div class="mt-10 max-w-[80vw] mx-auto">
+      <h2 class="mb-10 headingPrimary font-bold">
+        Pull money from {{ cardType | uppercase }} card in few seconds.
+      </h2>
+      <div class="bg-gradient-glass-low-opacity py-10 px-2 rounded-xl">
+        <form
+          [formGroup]="cardToDuoForm"
+          (ngSubmit)="onSubmit()"
+          class="flex flex-col gap-4"
+        >
+          <div class="flex flex-col bg-glass-low-opacity p-2 py-3 rounded-md">
+            <label class="text-sm" for="cardNumber">Name:</label>
+            <input
+              id="name"
+              type="text"
+              formControlName="name"
+              required
+              class="border-rounded bg-slate-100 rounded-md p-1 text-md border-none outline-0 py-2 pl-2"
+            />
+
+            @if ( cardToDuoForm.get('name')?.invalid &&
+            cardToDuoForm.get('name')?.touched ) {
+            <span class="text-red-500 text-sm">Invalid Name</span>
+            }
+          </div>
+
+          <div class="flex flex-col bg-glass-low-opacity p-2 py-3 rounded-md">
+            <label class="text-sm" for="cardNumber">Card Number:</label>
+            <input
+              id="cardNumber"
+              type="text"
+              formControlName="cardNumber"
+              required
+              class="border-rounded bg-slate-100 rounded-md p-1 text-md border-none outline-0 py-2 pl-2"
+              (keyup)="onKeyupCardNumber($event)"
+              maxlength="19"
+            />
+            @if (cardToDuoForm.get('cardNumber')?.invalid &&
+            cardToDuoForm.get('cardNumber')?.touched) {
+            <span class="text-red-500 text-sm">Invalid Card Number</span>
+            }
+          </div>
+
+          <div class="flex flex-col bg-glass-low-opacity p-2 py-3 rounded-md">
+            <label class="text-sm" for="expirationDate">Expiration Date:</label>
+            <input
+              id="expirationDate"
+              type="text"
+              formControlName="expirationDate"
+              required
+              pattern="(0[1-9]|1[0-2])\/([0-9]{2})"
+              placeholder="MM/YY"
+              class="border-rounded bg-slate-100 rounded-md p-1 text-md border-none outline-0 py-2 pl-2"
+              (keyup)="addSlash($event)"
+            />
+            @if (cardToDuoForm.get('expirationDate')?.invalid &&
+            cardToDuoForm.get('expirationDate')?.touched) {
+            <div class="text-red-500 text-sm">Invalid Date</div>
+            }
+          </div>
+
+          <div class="flex flex-col bg-glass-low-opacity p-2 py-3 rounded-md">
+            <label class="text-sm" for="cvv">CVV/CVC</label>
+            <input
+              id="cvv"
+              type="text"
+              formControlName="cvv"
+              required
+              class="border-rounded bg-slate-100 rounded-md p-1 text-md border-none outline-0 py-2 pl-2"
+              maxlength="4"
+            />
+            @if (cardToDuoForm.get('cvv')?.invalid &&
+            cardToDuoForm.get('cvv')?.touched) {
+            <span class="text-red-500 text-sm">Invalid CVV/CVC</span>
+            }
+          </div>
+
+          <div class="flex flex-col bg-glass-low-opacity p-2 py-3 rounded-md">
+            <label class="text-sm" for="amount">Amount:</label>
+            <div
+              class="border-rounded bg-slate-100 rounded-md p-1 text-md border-none outline-0 py-2 pl-2"
+            >
+              <span>$</span>
+              <input
+                id="amount"
+                type="text"
+                formControlName="amount"
+                required
+                class="bg-transparent border-none outline-0 pl-2"
+              />
+              @if (cardToDuoForm.get('amount')?.invalid &&
+              cardToDuoForm.get('amount')?.touched) {
+              <span class="text-red-500 text-sm">Invalid Amount</span>
+              }
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            class="formButton"
+            [disabled]="!cardToDuoForm.valid"
+          >
+            Add
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<ngx-spinner
+  bdColor="rgba(0, 0, 0, 0.8)"
+  size="medium"
+  color="#673ab7"
+  type="ball-scale-multiple"
+  [fullScreen]="true"
+>
+  <p style="color: white">Adding money to your account...</p>
+</ngx-spinner>

@@ -1,0 +1,45 @@
+<div class="min-h-screen">
+  <section class="overflow-hidden">
+    <div class="mx-auto px-5 sm:px-1 max-w-xl">
+      <div class="flex justify-between items-center">
+        <h1 class="text-2xl font-bold mb-1 headingPrimary">
+          Don’t miss a beat
+        </h1>
+        <img
+          src="/assets/icons/bell.png"
+          style="height: 30px; width: 30px"
+          alt=""
+        />
+      </div>
+      <p class="text-xs mb-5 text-slate-500">
+        Get notified about spending, security, wealth, market movements,
+        discounts and deals, so you're always in the know
+      </p>
+      <div class="mt-5 flex justify-center items-center">
+        <img
+          src="/assets/icons/bell.png"
+          alt="bell icon"
+          class="max-w-[80vw]"
+        />
+      </div>
+    </div>
+  </section>
+  <section class="absolute bottom-10 left-0 w-full">
+    <div class="flex flex-col gap-5 justify-center items-center">
+      <button
+        mat-stroked-button
+        class="btnPrimary w-32 h-12 text-lg flex items-center justify-center"
+        (click)="ClickOnEnableNotification()"
+      >
+        Enable
+      </button>
+      <button
+        mat-stroked-button
+        class="btnOutline w-32 h-12 text-lg flex items-center justify-center"
+        (click)="ClickOnDisableNotification()"
+      >
+        Skip
+      </button>
+    </div>
+  </section>
+</div>

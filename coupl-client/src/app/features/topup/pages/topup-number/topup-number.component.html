@@ -1,0 +1,53 @@
+<section>
+  <div class="top-design flex justify-center items-center text-xl w-full">
+    <h1 class="m-0 text-center text-white">Top Up</h1>
+  </div>
+  <div class="-mt-10 bg-white rounded-t-3xl p-5">
+    <div class="mt-10 max-w-[80vw] mx-auto">
+      <h2 class="mb-10 headingPrimary font-bold">Enter your phone number.</h2>
+      <div class="bg-gradient-glass-low-opacity py-10 px-2 rounded-xl">
+        <form
+          [formGroup]="phoneNumberForm"
+          (ngSubmit)="onSubmit()"
+          class="flex flex-col gap-4"
+        >
+          <div class="flex flex-col bg-glass-low-opacity p-2 py-3 rounded-md">
+            <label class="text-sm" for="phoneNumber">Phone Number:</label>
+            <div
+              class="border-rounded bg-slate-50 rounded-md p-1 text-md border-none outline-0 py-2 pl-2 flex justify-start items-center"
+            >
+              <svg
+                width="24"
+                height="24"
+                xmlns="http://www.w3.org/2000/svg"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+              >
+                <path
+                  d="M8.26 1.289l-1.564.772c-5.793 3.02 2.798 20.944 9.31 20.944.46 0 .904-.094 1.317-.284l1.542-.755-2.898-5.594-1.54.754c-.181.087-.384.134-.597.134-2.561 0-6.841-8.204-4.241-9.596l1.546-.763-2.875-5.612zm7.746 22.711c-5.68 0-12.221-11.114-12.221-17.832 0-2.419.833-4.146 2.457-4.992l2.382-1.176 3.857 7.347-2.437 1.201c-1.439.772 2.409 8.424 3.956 7.68l2.399-1.179 3.816 7.36s-2.36 1.162-2.476 1.215c-.547.251-1.129.376-1.733.376"
+                />
+              </svg>
+              <input
+                id="phoneNumber"
+                type="text"
+                formControlName="phoneNumber"
+                required
+                class="pl-2 bg-transparent outline-none border-none"
+                minlength="10"
+                maxlength="10"
+              />
+            </div>
+          </div>
+
+          <button
+            type="submit"
+            class="formButton"
+            [disabled]="!phoneNumberForm.valid"
+          >
+            Next
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,77 @@
+<div class="min-h-screen">
+  <section class="overflow-hidden">
+    <div class="mx-auto px-5 sm:px-1 max-w-xl">
+      <div class="flex justify-between items-center">
+        <h1 class="text-2xl font-bold mb-1 headingPrimary">Invite your duo</h1>
+      </div>
+      <p class="text-xs mb-5 text-slate-500">
+        Invite your duo to start spend together
+      </p>
+      @if (displayInvitePartnerView) {
+      <div class="mt-5 flex justify-center items-center">
+        <img
+          src="/assets/icons/invite.png"
+          alt="bell icon"
+          class="max-w-[80vw] w-[80%]"
+        />
+      </div>
+      } @else {
+      <form>
+        <div class="mt-5">
+          <mat-form-field appearance="outline" class="w-full mb-5">
+            <mat-label class="text-primary">Email</mat-label>
+            <input
+              matInput
+              placeholder="Email"
+              name="email"
+              [formControl]="email"
+              required
+            />
+            @if (email.invalid) {
+            <mat-error class="text-sm">{{ getErrorMessage() }}</mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </form>
+      }
+    </div>
+  </section>
+  <section class="absolute bottom-10 left-0 w-full">
+    <div class="flex flex-col gap-5 justify-center items-center">
+      @if (displayInvitePartnerView) {
+      <button
+        mat-stroked-button
+        class="btnPrimary w-32 h-12 text-lg flex items-center justify-center"
+        (click)="showInvitationField()"
+      >
+        Invite Now
+      </button>
+      } @else {
+      <button
+        mat-stroked-button
+        class="btnPrimary w-32 h-12 text-lg flex items-center justify-center"
+        (click)="sendInvitation()"
+      >
+        Send
+      </button>
+      }
+      <button
+        mat-stroked-button
+        class="btnOutline w-32 h-12 text-lg flex items-center justify-center"
+        (click)="skipInvite()"
+      >
+        Skip
+      </button>
+    </div>
+  </section>
+</div>
+
+<ngx-spinner
+  bdColor="rgba(0, 0, 0, 0.8)"
+  size="medium"
+  color="#673ab7"
+  type="ball-scale-multiple"
+  [fullScreen]="true"
+>
+  <p style="color: white">Please wait sending invitation to your duo...</p>
+</ngx-spinner>

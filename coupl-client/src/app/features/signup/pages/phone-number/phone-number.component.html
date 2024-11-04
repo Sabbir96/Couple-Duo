@@ -1,0 +1,45 @@
+<div class="min-h-screen">
+  <section>
+    <div class="mx-auto px-5 sm:px-1 max-w-xl">
+      <div class="flex justify-between items-center">
+        <h1 class="text-3xl mb-1 headingPrimary">Phone Number</h1>
+        <img
+          src="/assets/icons/otp.png"
+          style="height: 30px; width: 30px"
+          alt="email icon"
+        />
+      </div>
+      <p class="text-xs mb-5 text-slate-500">Please enter your phone number.</p>
+      <form>
+        <div class="mt-5">
+          <mat-form-field appearance="outline" class="w-full mb-5">
+            <mat-label class="text-primary">Phone Number</mat-label>
+            <input
+              matInput
+              placeholder="Phone Number"
+              name="phonenumber"
+              [formControl]="phonenumber"
+              minlength="10"
+              maxlength="10"
+            />
+          </mat-form-field>
+        </div>
+        @if (phonenumber.invalid) {
+        <p class="text-sm text-red-600">{{ getErrorMessage() }}</p>
+        }
+      </form>
+    </div>
+  </section>
+  <section class="absolute bottom-10 left-0 w-full">
+    <div class="flex flex-col gap-5 justify-center items-center">
+      <button
+        mat-stroked-button
+        class="btnOutline w-32 h-12 text-lg flex items-center justify-center"
+        [disabled]="phonenumber.invalid"
+        (click)="goToNextPage()"
+      >
+        Verify
+      </button>
+    </div>
+  </section>
+</div>

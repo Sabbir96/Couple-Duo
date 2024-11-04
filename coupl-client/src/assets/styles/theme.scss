@@ -1,0 +1,28 @@
+@import './material/theming';
+@include mat-core($custom-typography);
+@import 'palette.scss';
+
+$primary: mat-palette($ambrose-primary);
+$accent-light: mat-palette($ambrose-accent,700);
+$warn: mat-palette($ambrose-warn);
+
+$light-theme: mat-light-theme($primary, $accent-light, $warn);
+
+// Define an alternate dark theme.
+$accent-dark: mat-palette($ambrose-accent-dark,200);
+$dark-theme: mat-dark-theme($primary, $accent-dark, $warn);
+
+// Include the alternative theme styles inside of a block with a CSS class. You can make this
+// CSS class whatever you want. In this example, any component inside of an element with
+// `.dark-theme` will be affected by this alternate dark theme instead of the default theme.
+.light-theme, .embedded-light-theme, .dark-theme .embedded-dark-theme  {
+ @include angular-material-theme($light-theme);
+}
+
+
+// Include the alternative theme styles inside of a block with a CSS class. You can make this
+// CSS class whatever you want. In this example, any component inside of an element with
+// `.dark-theme` will be affected by this alternate dark theme instead of the default theme.
+.dark-theme, .embedded-dark-theme, .light-theme .embedded-light-theme  {
+  @include angular-material-theme($dark-theme);
+}

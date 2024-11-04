@@ -1,0 +1,252 @@
+/* You can add global styles to this file, and also import other style files */
+// @import "./assets/styles/theme.scss";
+// PRIMARY COLOR: #673ab6 /  rgb(103, 58, 182)
+@import url("./assets/fonts/mabrypro/mabryprofont.css");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@700&display=swap");
+
+// @use '@ngneat/hot-toast/src/styles/styles.scss';
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+@tailwind components;
+@tailwind utilities;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+button {
+  font-family: "Mabry Pro";
+  font-weight: 400;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+a {
+  position: relative; // Add this line
+  transition: all 0.3s ease;
+  text-decoration: none;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+  }
+
+  &:hover {
+    font-weight: 700;
+    text-decoration: underline;
+    transition: all 0.3s ease;
+  }
+}
+
+.btnPrimary {
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  border: transparent;
+  background: linear-gradient(
+    140deg,
+    rgba(250, 44, 5, 1),
+    rgba(246, 55, 227, 1),
+    rgba(103, 58, 182, 1)
+  );
+  background-size: 200% 200%;
+  color: #ffffff;
+  &:hover,
+  &:active {
+    font-weight: 700;
+    background: linear-gradient(
+      140deg,
+      rgba(103, 58, 182, 1),
+      rgba(246, 55, 227, 1),
+      rgba(250, 44, 5, 1)
+    );
+    transform: translate(0px, -5px);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  }
+  &:disabled {
+    background: linear-gradient(
+      140deg,
+      rgba(250, 44, 5, 1),
+      rgba(246, 55, 227, 1),
+      rgba(103, 58, 182, 1)
+    );
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+    opacity: 50%;
+  }
+}
+// rgb(103, 58, 182)
+.btnOutline {
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  border: 3px solid #673ab7;
+  background: transparent;
+  color: #673ab7;
+
+  &:hover,
+  &:active {
+    font-weight: 700;
+    background: linear-gradient(
+      216deg,
+      rgba(255, 255, 255, 0.3) -11.62%,
+      rgba(250, 44, 5, 0.3) -11.61%,
+      rgba(246, 55, 227, 0.3) 49.64%,
+      rgba(103, 58, 182, 0.3) 105.99%
+    );
+    border: transparent;
+    transform: translate(0px, -5px);
+    box-shadow: 0px 0px 10px 0px rgba(103, 58, 182, 0.75);
+  }
+
+  &:disabled {
+    border-radius: 20px;
+    transition: none;
+    border: 3px solid #673ab7;
+    color: #673ab7;
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+    opacity: 50%;
+  }
+}
+
+.headingPrimary {
+  background: linear-gradient(
+    140deg,
+    rgba(250, 46, 5, 0.9) 0%,
+    rgba(246, 55, 227, 0.8) 50%,
+    rgba(103, 58, 182, 1) 66.67%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.inputPrimary {
+  border: 3px solid rgb(103, 58, 182);
+}
+
+.bgGradient {
+  background: linear-gradient(
+    140deg,
+    rgba(250, 46, 5, 1) 0%,
+    rgba(246, 55, 227, 1) 50%,
+    rgba(103, 58, 182, 1) 66.67%
+  );
+}
+
+.bgGradientReverse {
+  background: linear-gradient(
+    140deg,
+    rgba(103, 58, 182, 1) 0%,
+    rgba(246, 55, 227, 1) 50%,
+    rgba(250, 46, 5, 1) 66.67%
+  );
+}
+
+.top-design {
+  background: linear-gradient(
+    140deg,
+    rgba(250, 46, 5, 1) 0%,
+    rgba(246, 55, 227, 1) 50%,
+    rgba(103, 58, 182, 1) 66.67%
+  );
+  min-height: 300px;
+}
+
+.bg-gradient-glass-low-opacity {
+  background-image: linear-gradient(
+    140deg,
+    rgba(250, 44, 5, 0.7),
+    rgba(246, 55, 227, 0.4),
+    rgba(133, 20, 245, 0.3),
+    rgba(246, 55, 227, 0.5),
+    rgba(133, 20, 245, 0.7),
+    rgba(250, 44, 5, 0.7)
+  );
+}
+
+.bg-glass-low-opacity {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease-in;
+  &:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transition: all 0.3s ease-out;
+  }
+}
+
+.formButton {
+  cursor: pointer;
+  border-radius: 20px;
+  // background-color: white;
+  background: linear-gradient(
+    140deg,
+    rgba(250, 44, 5, 1),
+    rgba(246, 55, 227, 1),
+    rgba(103, 58, 182, 1)
+  );
+  // color: #673ab7;
+  color: white;
+  // border: 3px solid rgb(103, 58, 182);
+  border: none;
+  font-weight: 700;
+  font-size: 1.4rem;
+  transition: all 0.3s ease;
+  width: 50%;
+  margin: 10px auto;
+  padding: 10px 20px;
+  scale: 0.95;
+
+  &:hover,
+  &:active {
+    font-weight: 700;
+    // background-color: #673ab7;
+    border: transparent;
+    background: linear-gradient(
+      140deg,
+      rgba(250, 44, 5, 1),
+      rgba(246, 55, 227, 1),
+      rgba(103, 58, 182, 1)
+    );
+    color: white;
+    scale: 1;
+    // transform: translate(0px, -5px);
+    // box-shadow: 0px 0px 10px 0px rgba(103, 58, 182, 0.75);
+  }
+
+  &:disabled {
+    border-radius: 20px;
+    transition: none;
+    border: 3px solid #673ab7;
+    color: #673ab7;
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+    opacity: 50%;
+  }
+}

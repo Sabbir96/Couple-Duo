@@ -1,0 +1,66 @@
+<div class="flex items-center justify-center bg-custom-blue inset-x-0 top-25">
+  <div class="flex items-center justify-center">
+    <input
+      type="checkbox"
+      id="toggle"
+      class="toggleCheckbox"
+      [(ngModel)]="isChecked"
+    />
+    <label for="toggle" class="toggleContainer">
+      <div>All Transactions</div>
+      <div>Statistics</div>
+    </label>
+  </div>
+</div>
+
+@if (!isChecked) {
+<div class="mt-[4rem]">
+  <div
+    *ngFor="let transaction of transactions"
+    class="card bg-white shadow-lg rounded-lg p-4 m-2"
+  >
+    <h2 class="text-xl font-bold mb-2">{{ transaction.date }}</h2>
+    <p class="mb-1"><strong>Amount:</strong> {{ transaction.amount }}</p>
+    <p class="mb-1"><strong>Expense:</strong> {{ transaction.expense }}</p>
+    <p class="mb-1"><strong>Person:</strong> {{ transaction.person }}</p>
+  </div>
+</div>
+} @else {
+<div class="mt-[4rem]">
+  <div class="card bg-[#274d79] shadow-lg rounded-lg p-6 m-4">
+    <h2 class="text-lg font-bold mb-4 text-[#8e8e8e]">Total Spends</h2>
+    <p class="font-bold text-white mb-4">$23,400</p>
+    <div class="flex justify-between gap-4 text-xl">
+      <div
+        class="flex items-center justify-center bg-[#436792] p-2 rounded-lg flex-grow"
+      >
+        <div
+          class="bg-[#293693] text-white rounded-full w-8 h-8 flex items-center justify-center mr-2 p-2"
+        >
+          Ro
+        </div>
+        <p class="text-white">$12000</p>
+      </div>
+      <div
+        class="flex items-center justify-center bg-[#436792] p-2 rounded-lg flex-grow"
+      >
+        <div
+          class="bg-[#293693] text-white rounded-full w-8 h-8 flex items-center justify-center mr-2 p-2"
+        >
+          Au
+        </div>
+        <p class="text-white">$11400</p>
+      </div>
+    </div>
+  </div>
+  <div class="card p-6 m-4">
+    <h4>Month wise Spends</h4>
+    <canvas id="monthWiseSpends"></canvas>
+  </div>
+
+  <div class="card p-6 m-4">
+    <h4>Top Spends</h4>
+    <canvas id="categoryWiseSpends"></canvas>
+  </div>
+</div>
+}
